@@ -1,0 +1,26 @@
+Release 1 
+Initial release included project specification ("Imaging the Universe v1.pdf"), supplied code and images of the Eagle Nebula
+
+Release 2 
+The supplied PickSpectrumColour function was updated.
+The call to title(message) was corrected to title(titleMessage)
+
+Release 3
+Update to "Imaging The Universe v2.pdf"
+V2 includes a correction to the bottom of page 13
+"Hence we return the values R = 85, G = 0 and B = 255" was corrected to
+"Hence we return the values R = 170, G = 0 and B = 255"
+
+Release 4
+Update to "Imaging the Universe v3.pdf"
+V3 includes a corrrect to the specification of ExtractWaveLengthFromFilename on page 12
+It now mentions the mediumband filter and explains what is expected for medium build filters
+Added page numbers to the pdf too, for easier reference
+Updated the Examples.m file to include one extra example of using ExtractWaveLengthFromFilename
+with a mediumband filter.
+Added Marking rubric document
+Added "Enggen131 Good practice guidelines" document
+Added TimeProcessHubbleImages script to use to calculate total execution time
+
+
+ 
