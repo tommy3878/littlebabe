@@ -1,7 +1,10 @@
-function [ output_args ] = DisplayCellImages( image, name, value )
+function [ output_args ] = DisplayCellImages( image )
 %DISPLAYCELLIMAGES Summary of this function goes here
 %   Detailed explanation goes here
-    imshow(image, name, value);
+
+%	args passed in as array, so first count the array length
+%	then for each [i] display with imshow
+    imshow(image);
 
 end
 
