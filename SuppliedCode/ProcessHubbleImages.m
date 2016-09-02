@@ -27,7 +27,8 @@ end
 
 % display raw images as figure 1
 % YOU NEED TO WRITE DisplayCellImages
-DisplayCellImages(layer,'Raw image', 1)
+% DisplayCellImages(layer,'Raw image', 1)
+DisplayCellImages(layer)
 
 % Calculate the background and peak values for each imager or determine
 % them manually using the provided FetchBackgroundAndPeakValue function

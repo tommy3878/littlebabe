@@ -1,4 +1,4 @@
-function [ output_args ] = DisplayCellImages( image )
+function [ ] = DisplayCellImages( image )
 %DISPLAYCELLIMAGES Summary of this function goes here
 %   Detailed explanation goes here
 
