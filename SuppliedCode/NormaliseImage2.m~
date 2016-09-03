@@ -1,0 +1,11 @@
+function [ nImage ] = NormaliseImage2(GreyscalePic, p, b)
+%   The purpose of this function is to improve the image contrast by normalising the greyscale image
+%   The image is linearly scaled to move a specified background value (dark value) to 0 and the peak value (bright value) to 255. 
+%   The peak value is assumed to be larger than the background value.
+
+    p= double(p);
+    b= double(b);
+    
+    nImage = arrayfun(@(x) r255*(x-b)/(p-b)), GreyscalePic);
+    
+end
