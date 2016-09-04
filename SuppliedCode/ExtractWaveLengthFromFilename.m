@@ -11,7 +11,7 @@ function [ value ] = ExtractWaveLengthFromFilename( str )
         % For some reason it only return 1x1 cell value within the
         % function, but not the case when execute directly within command
         % window .... So further process to distill and convert the value
-        % to double
+        % to
         value = str2double(value{1});
     
     catch
