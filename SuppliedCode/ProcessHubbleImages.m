@@ -49,7 +49,7 @@ for i=1:nfiles
         
         % YOU NEED TO WRITE EstimateBackgroundValue
         % it will pick the most common value as the background value
-        background(i) = EstimateBackgroundValue(I);
+        background(i) = EstimateBackGroundValue(I);
         
         % for debugging purposes, you can comment out the above line
         % until you have implemented EstimateBackgroundValue and 
@@ -70,7 +70,7 @@ for i=1:nfiles
     I = layer{i};
     % calculate normalisation of image
     % YOU NEED TO WRITE NormaliseImage
-    N{i} = NormaliseImage(I,background(i),peak(i));
+    N{i} = NormaliseImage2(I,background(i),peak(i));
 end
 
 % display normalised images as figure 2
