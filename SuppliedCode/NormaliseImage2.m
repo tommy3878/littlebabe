@@ -7,6 +7,7 @@ function [ nImage ] = NormaliseImage2(GreyscalePic, bg, pk)
     gPic = double(GreyscalePic);
     
     % Apply the formula for each element in the matrix
+    % http://www.mathworks.com/help/matlab/ref/arrayfun.html
     nImage = arrayfun(@(x) (255 * (x- bg) / (pk - bg)), gPic);
     
     % Return uint8 precision
