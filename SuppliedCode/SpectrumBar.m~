@@ -4,7 +4,7 @@ function [ S ] = SpectrumBar( Lw, Hw )
     S = ones(1, n, 3);
 
         for nCol =1:n;
-            [R, G, B] = WaveLengthToRGB(Lw + nCol - 1);
+            [R, G, B] = WaveLengthToRGB(((Lw - 1) + nCol);
             S(1,nCol,1) = R;
             S(1,nCol,2) = G;
             S(1,nCol,3) = B;

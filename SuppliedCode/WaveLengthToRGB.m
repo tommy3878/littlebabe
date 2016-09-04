@@ -8,28 +8,28 @@ function [R,G,B] = WaveLengthToRGB( WaveLength )
 w=WaveLength;
 %Violet - Blue
 if (380<=w)&&(w<=440)
-    R=255*(440-w)/60;
-    G=255*0;
-    B=255*1;
+    R=uint8(255*(440-w)/60);
+    G=0;
+    B=255;
 %Blue - Cyan
 elseif (440<=w)&&(w<=490)   
-    R=255*0;
-    G=255*(w-440)/50;
-    B=255*1;
+    R=0;
+    G=uint8(255*(w-440)/50);
+    B=255;
 %Cyan - Green
 elseif (490<=w)&&(w<=510)
-    R=255*0;
-    G=255*1;
-    B=255*(510-w)/20;
+    R=0;
+    G=255;
+    B=uint8(255*(510-w)/20);
 %Green - Yellow    
 elseif (510<=w)&&(w<=580)
-    R=255*(w-510)/70;
-    G=255*1;
-    B=255*0;
+    R=uint8(255*(w-510)/70);
+    G=255;
+    B=0;
 %Green - Yellow
 elseif (580<=w)&&(w<=645)
     R=255*1;
-    G=255*(645-w)/65;
+    G=uint8(255*(645-w)/65);
     B=255*0;
 %Yellow - Red  
 elseif (645)&&(w<=780)
