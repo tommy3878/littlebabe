@@ -70,7 +70,7 @@ for i=1:nfiles
     I = layer{i};
     % calculate normalisation of image
     % YOU NEED TO WRITE NormaliseImage
-    N{i} = NormaliseImage2(I,background(i),peak(i));
+    N{i} = NormaliseImage3(I,background(i),peak(i));
 end
 
 % display normalised images as figure 2
