@@ -1,0 +1,6 @@
+function [ value ] = ExtractWaveLengthFromFilename( str )
+
+    
+    value = regexp(str, '^_f.*n$|^f.*m|^f.*w');
+    
+end
