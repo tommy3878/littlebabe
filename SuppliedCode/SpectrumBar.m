@@ -1,7 +1,7 @@
 function [ S ] = SpectrumBar( Lw, Hw )
     %UNTITLED3 Summary of this function goes here
     n = Hw - Lw + 1; 
-    S = ones(1, n, 3);
+    S = zeros(1, n, 3);
 
         for nCol =1:n;
             [R, G, B] = WaveLengthToRGB(Lw + nCol - 1);
