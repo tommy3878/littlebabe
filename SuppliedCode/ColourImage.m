@@ -7,8 +7,10 @@ function [ cImage ] = ColourImage(gPic, red , green, blue)
     B = double(blue);
     cImage = zeros(gSize(1), gSize(2), 3);
     
-    cImage(:, :, 1) = uint8(gPic * R / 255);
-    cImage(:, :, 2) = uint8(gPic * G / 255);
-    cImage(:, :, 3) = uint8(gPic * B / 255);
+    cImage(:, :, 1) = gPic * R / 255;
+    cImage(:, :, 2) = gPic * G / 255;
+    cImage(:, :, 3) = gPic * B / 255;
+    
+    cImage = uint8(cImage);
     
 end

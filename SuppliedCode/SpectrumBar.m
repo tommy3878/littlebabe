@@ -9,7 +9,7 @@ function [ S ] = SpectrumBar( Lw, Hw )
             S(1,nCol,2) = G;
             S(1,nCol,3) = B;
         end
-
+    S = uint8(S);
     S = repmat(S, 100, 1);
     
 end
