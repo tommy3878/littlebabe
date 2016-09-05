@@ -11,7 +11,11 @@ function [ nImage ] = NormaliseImage3(gPic, bg, pk)
     % nImage = arrayfun(@(x) (255 * (x- bg) / (pk - bg)), gPic);
     
     % Return uint8 precision
-    nImage = double(255 * (gPic-bg) / (pk-bg));
+    gPic = double(gPic);
+    bg  = double(bg);
+    pk = double(pk);
+    
+    nImage = 255 * (gPic-bg) / (pk-bg);
     
     nImage = uint8(nImage);
     
