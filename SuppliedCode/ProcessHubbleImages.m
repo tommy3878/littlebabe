@@ -124,12 +124,12 @@ imwrite(C,'combined.jpg');
 % of the WFPC section of the image are parallel to the image edges
 % (see project specification example)
 % NOTE: this is super hard!!
-% R=AutoRotate(C);
+R=AutoRotate(C);
 
 % Write an AutoCrop function to crop the image nicely, once it has been
 % rotated
 % NOTE: this is a little tricky but not as hard as AutoRotate
-% F=AutoCrop(R);
+F=AutoCrop(R);
 
 
 
