@@ -22,7 +22,8 @@ clear
 clf
 
 % path to directory containing tif images, edit as appropriate
-dirPath = 'C:\Users\Peter\Documents\Courses\Enggen131sc\2016SC\Project\MatlabProjectRelease\EagleNebula\';
+% dirPath = 'C:\Users\Peter\Documents\Courses\Enggen131sc\2016SC\Project\MatlabProjectRelease\EagleNebula\';
+dirPath = '~/sandbox/littlebabe/EagleNebula/';
 
 % get tif files from specified directory using provided FetchTifFiles
 % function
