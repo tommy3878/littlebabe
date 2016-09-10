@@ -1,5 +1,6 @@
 function [ value ] = ExtractWaveLengthFromFilename( str )
-    
+    % to use regexp to find and extract the waveLength from file name and
+    % wraped within try and catch for error handling
     try
         % http://www.mathworks.com/help/matlab/matlab_prog/regular-expressions.html
         % Extract only matched pattern with _f + 3 digits + end with (n_ or
@@ -14,7 +15,7 @@ function [ value ] = ExtractWaveLengthFromFilename( str )
         % For some reason it only return 1x1 cell value within the
         % function, but not the case when execute directly within command
         % window .... So further process to distill and convert the value
-        % to
+        % to double
         value = str2double(value{1});
     
     catch

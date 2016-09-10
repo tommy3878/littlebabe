@@ -111,6 +111,9 @@ imshow(C3)
 
 disp('Example of calling CombineImages');
 
+clear
+clf
+
 % create a greyscale image
 G = zeros(128,'uint8'); 
 for i=1:128
@@ -118,6 +121,7 @@ for i=1:128
         G(i,j)=i+j;
     end
 end
+
 C{1}=ColourImage(G,255,0,0); % colour it with pure red
 C{2}=ColourImage(G,0,0,255); % colour it with pure blue
 T=CombineImages(C) % should produce a purple image

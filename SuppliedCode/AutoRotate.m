@@ -1,5 +1,6 @@
 function [ img ] = AutoRotate( img )
-    %UNTITLED3 Summary of this function goes here
+    % In order to auto rotate the image, first need to find the angle to
+    % rotate and the actually rotate the image.
     
     angle = FindingAngle(img);
     

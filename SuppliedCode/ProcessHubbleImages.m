@@ -49,7 +49,7 @@ for i=1:nfiles
         
         % YOU NEED TO WRITE EstimateBackgroundValue
         % it will pick the most common value as the background value
-        background(i) = EstimateBackGroundValue(I);
+        background(i) = EstimateBackgroundValue(I);
         
         % for debugging purposes, you can comment out the above line
         % until you have implemented EstimateBackgroundValue and 
