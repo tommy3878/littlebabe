@@ -2,10 +2,13 @@ function [ value ] = ExtractWaveLengthFromFilename( str )
     
     try
         % http://www.mathworks.com/help/matlab/matlab_prog/regular-expressions.html
-        value = regexp(str, '_f.*n_|_f.*m_|_f.*w_', 'match');
-
-        % Extract the numeric value
-        value = regexp(value, '[0-9]*', 'match');
+        % Extract only matched pattern with _f + 3 digits + end with (n_ or
+        % m_ or w_)
+        value = regexp(str, '_f\d{3}n_|_f\d{3}m_|_f\d{3}w_', 'match');
+        
+        % If the first regexp did not have any error, then it will extract
+        % the 3 digits value from the string
+        value = regexp(value, '\d{3}', 'match');
 
         % Convert to double for further processing
         % For some reason it only return 1x1 cell value within the

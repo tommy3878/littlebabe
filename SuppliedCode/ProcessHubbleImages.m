@@ -130,7 +130,7 @@ R=AutoRotate(C);
 % rotated
 % NOTE: this is a little tricky but not as hard as AutoRotate
 F=AutoCrop(R);
-
+imshow(F);
 
 
 
