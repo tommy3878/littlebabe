@@ -39,7 +39,7 @@ DisplayCellImages(layer,'Raw image', 1)
 b=[105 125 35 95]; % default background values for supplied images
 
 manualSelection = input('Do you want to select background and peak points manually? (y or n):','s');
-
+% manualSelection = 'n'; % code for timer
 for i=1:nfiles
     
     % raw image
@@ -70,14 +70,14 @@ for i=1:nfiles
     I = layer{i};
     % calculate normalisation of image
     % YOU NEED TO WRITE NormaliseImage
-    N{i} = NormaliseImage3(I,background(i),peak(i));
+    N{i} = NormaliseImage(I,background(i),peak(i));
 end
 
 % display normalised images as figure 2
 DisplayCellImages(N,'Normalised', 3)
 
 manualColour = input('Do you want to assign colours manually? (y or n):','s');
-
+% manualColour = 'n'; % Code for timer
 % Colour the images based either on the colour of the light wave length
 % for the filter or a manually assigned colour choice
 for i=1:nfiles
