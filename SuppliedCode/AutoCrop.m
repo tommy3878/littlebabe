@@ -1,9 +1,13 @@
 function [ cImage ] = AutoCrop( img )
     % Reference: https://www.mathworks.com/matlabcentral/answers/55253-how-to-crop-an-image-automatically
-    % Reuse the matrix row and col sum concept from FindAngle
-    
-    % Define and initate the variables below, 
-    % First flattern the RGB matrix for easy coordinate finding
+    % Reuse the matrix row and col sum concept from FindingAngle, but
+    % slightly different because there were some issue in locating the last
+    % coordinate.
+
+    % First flattern the RGB matrix to easier locate the coordinates  
+    % because there were issues when dealing with multi dim matrix to find 
+    % the last occurance, so to get around this issue, I try to flattern 
+    % the RGB layers from the concept of combined images.
     fImg = img(:,:,1)+img(:,:,2)+img(:,:,3); 
     xRow = find(sum(fImg,2)>0,1,'first'); % locate the first row
     yRow = find(sum(fImg,2)>0,1,'last'); % locate the last row
