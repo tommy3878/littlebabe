@@ -3,45 +3,22 @@ function [ cImage ] = AutoCrop( img )
     % Reuse the matrix row and col sum concept from FindAngle
     
     % Define and initate the variables below, 
-    bRowSum = 0; % Rows sum from top down
-    eRowSum = 0; % Rows sum from bottom up
-    bColSum = 0; % Cols sum from Left
-    eColSum = 0; % Cols sum from Right
-    tRow = 0; % top row
-    bRow = size(img, 1); % bottom row
-    lCol = 0; % left col
-    rCol = size(img, 2); % right col
-    
-    % PS: Personally prefer seperate loops for easier reading
-    % Find the top row until the row sum from top is greater than 1
-    while bRowSum == 0
-        tRow = tRow + 1;
-        bRowSum = sum(img(tRow,1:end,:));
-        % Sum the matrix with entire col at given row across 3 channels
-    end
-    
-    % Find the bottomw row until the row sum from bottom is greater than 1
-    while eRowSum == 0
-        bRow = bRow - 1;
-        eRowSum = sum(img(bRow,1:end,:));
-        % Sum the matrix with entire col at given row across 3 channels
-    end
-    
-    % Find the left col until the col sum from left is greater than 1
-    while bColSum == 0
-        lCol = lCol + 1;
-        bColSum = sum(img(1:end,lCol,:));
-        % Sum the matrix with entire row at given col across 3 channels
-    end
-    
-    % Find the right col until the col sum from right is greater than 1
-    while eColSum == 0
-        rCol = rCol - 1;
-        eColSum = sum(img(1:end,rCol,:));
-        % Sum the matrix with entire row at given col across 3 channels
-    end
+    % First flattern the RGB matrix for easy coordinate finding
+    fImg = img(:,:,1)+img(:,:,2)+img(:,:,3); 
+    xRow = find(sum(fImg,2)>0,1,'first'); % locate the first row
+    yRow = find(sum(fImg,2)>0,1,'last'); % locate the last row
+    xCol = find(sum(fImg,1)>0,1,'first'); % locate the first col
+    yCol = find(sum(fImg,1)>0,1,'last'); % locate the last col
 
     % Extract a cropped image from the original.
-    cImage = img(tRow:bRow, lCol:rCol, :);
+    % Use the original img for output, NOT the flatten fImg
+    cImage = img(xRow:yRow, xCol:yCol, :);
+    
+    % Optional for fun!! Above one will do the job, but I noticed there are
+    % some white noise on the edge that I wish to remove during the crop.
+    % Below codes are only used to crop the noise out of the image really 
+    % just doing it for fun to make it a nice touch on the output.
+    % noise = 8;
+    % cImage = img(xRow+noise:yRow-noise, xCol+noise:yCol-noise, :);
     
 end
